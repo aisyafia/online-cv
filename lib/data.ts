@@ -2,9 +2,10 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import moviexplorer from "@/public/moviexplorer.jpg";
+import bs4ss from "@/public/bs4ss.jpg";
+import cocktailogy from "@/public/cocktailogy.jpg";
+import hangmanovie from "@/public/moviexplorer.jpg";
 
 export const links = [
   {
@@ -124,26 +125,26 @@ export const projectsData = [
     description:
       "A self-practice project using Typescript, Next.js, and Tailwind.",
     tags: ["React", "Next.js", "Tailwind", "Vercel"],
-    imageUrl: corpcommentImg,
+    imageUrl: cocktailogy,
   },
   {
     title: "Big Sister for Small Sister",
     description:
       "A website for women volunteers, focusing on supporting young, marginalised girls in Northern Kenya. Their first project was fundraising, to provide sustainable and reusable menstrual kits for school girls in Samburu.",
     tags: ["React", "TypeScript", "MUI", "Netlify"],
-    imageUrl: rmtdevImg,
+    imageUrl: bs4ss,
   },
   {
     title: "MoviExplorer",
     description: "A hobby project for self-practice.",
     tags: ["React", "Typescript", "Redux", "MUI"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: moviexplorer,
   },
   {
     title: "Hangman: Movie Edition",
     description: "A group project during the bootcamp.",
     tags: ["React", "Axios", "Styled Components"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: hangmanovie,
   },
 ] as const;
 

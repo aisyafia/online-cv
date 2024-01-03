@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Noto_Sans, Lexend } from "next/font/google";
+import { Header } from "@/components";
 
 const notosans = Noto_Sans({ subsets: ["latin"] });
 const lexend = Lexend({ subsets: ["latin"] });
@@ -16,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} bg-sky-950 text-violet-50`}>
+      <body className={`${notosans.className} bg-sky-950 text-violet-50`}>
+        <Header />
         {children}
       </body>
     </html>
