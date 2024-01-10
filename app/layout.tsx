@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${notosans.className} bg-sky-950 text-violet-50`}>
+      <body className={`${notosans.className} bg-sky-950 text-violet-50 px-[77px] py-[86px]`}>
         <Header />
         {children}
       </body>
