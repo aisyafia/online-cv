@@ -2,7 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
 p {
     font-size: 12px;
     font-weight: 200;
+}
+
+.bg-purple {
+    @apply bg-[#473E66]
 }
