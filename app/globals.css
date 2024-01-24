@@ -11,7 +11,7 @@ html {
   *,
   *::before,
   *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 
 p {
@@ -21,4 +21,11 @@ p {
 
 .bg-purple {
     @apply bg-[#473E66]
+}
+
+.trapezoid {
+  border-bottom: 31px solid #473E66;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 160px; 
 }
