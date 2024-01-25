@@ -23,9 +23,18 @@ p {
     @apply bg-[#473E66]
 }
 
+.bg-mudgreen {
+  @apply bg-[#8B8A64] rounded-2xl
+}
+
 .trapezoid {
+  border-radius: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom: 31px solid #473E66;
-  border-right: 50px solid transparent;
+  border-right: 30px solid transparent;
   height: 0;
   width: 160px; 
+  position: relative;
 }
