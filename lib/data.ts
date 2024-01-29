@@ -9,12 +9,8 @@ import hangmanovie from "@/public/moviexplorer.jpg";
 
 export const links = [
   {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
+    name: "Experience",
+    hash: "#experience",
   },
   {
     name: "Projects",
@@ -25,8 +21,8 @@ export const links = [
     hash: "#skills",
   },
   {
-    name: "Experience",
-    hash: "#experience",
+    name: "Education",
+    hash: "#education",
   },
   {
     name: "Contact",
