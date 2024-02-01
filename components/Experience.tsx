@@ -8,7 +8,7 @@ const Experience = () => {
           return (
             <div
               key={exp.title}
-              className="border border-white rounded-md my-4 p-2"
+              className="border border-white rounded-md m-4 p-2"
             >
               <h3>{exp.title}</h3>
               <h5>

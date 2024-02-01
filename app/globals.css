@@ -24,7 +24,7 @@ p {
 }
 
 .bg-mudgreen {
-  @apply bg-[#8B8A64] rounded-2xl
+  @apply bg-[#8B8A64] rounded-2xl 
 }
 
 .trapezoid {
@@ -37,4 +37,22 @@ p {
   height: 0;
   width: 160px; 
   position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 20px;
+  min-height: 50px;
+  margin: 20px 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 20px;
+  background-clip: content-box;
+  margin: 0 10px
 }

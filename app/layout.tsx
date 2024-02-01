@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Noto_Sans, Lexend } from "next/font/google";
-import { Intro } from "@/components";
+import { Header, Intro } from "@/components";
 
 const notosans = Noto_Sans({ subsets: ["latin"] });
 
@@ -22,7 +22,8 @@ export default function RootLayout({
         <h1>Lutfia Aisya</h1>
         <h3>Full Stack/Frontend Developer</h3>
         <Intro />
-        <div className="absolute left-1/4 px-2">{children}</div>
+        <Header />
+        <div className="absolute border-2 w-[53rem] h-[37rem] bg-mudgreen -z-50 fixed top-[8rem] left-1/4 p-2 overflow-y-auto">{children}</div>
       </body>
     </html>
   );
