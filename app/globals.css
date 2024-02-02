@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 html {
-    position: relative;
-    min-height: 100%;
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+  position: relative;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 p {
-    font-size: 12px;
-    font-weight: 200;
+  font-size: 12px;
+  font-weight: 200;
 }
 
 .bg-purple {
-    @apply bg-[#473E66]
+  @apply bg-[#473E66];
 }
 
 .bg-mudgreen {
-  @apply bg-[#8B8A64] rounded-2xl 
+  @apply bg-[#8B8A64] rounded-2xl;
 }
 
 .trapezoid {
@@ -32,10 +32,10 @@ p {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  border-bottom: 31px solid #473E66;
+  border-bottom: 31px solid #473e66;
   border-right: 30px solid transparent;
   height: 0;
-  width: 160px; 
+  width: 160px;
   position: relative;
 }
 
@@ -54,5 +54,5 @@ p {
   background: #9ca3af;
   border-radius: 20px;
   background-clip: content-box;
-  margin: 0 10px
+  margin: 0 10px;
 }

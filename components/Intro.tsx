@@ -8,14 +8,16 @@ import { BsGithub } from "react-icons/bs";
 
 const Intro = () => {
   return (
-    <section className="z-10 absolute left-20">
+    <section className="w-[18rem] p-4">
+      <h1>Lutfia Aisya</h1>
+      <h3>Full Stack/Frontend Developer</h3>
       <div className="flex justify-start items-center">
         <div>
           <Image
             src={profpic}
             alt="Lutfia picture"
             width={187}
-            height={193}
+            height={140}
             className="rounded-[20px] object-cover shadow-xl"
           />
         </div>

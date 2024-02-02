@@ -17,13 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notosans.className} bg-sky-950 text-violet-50 px-[77px] py-[86px]`}
+        className={`${notosans.className} bg-sky-950 text-violet-50 p-10 mx-auto container flex justify-start gap-2 items-center border-2`}
       >
-        <h1>Lutfia Aisya</h1>
-        <h3>Full Stack/Frontend Developer</h3>
-        <Intro />
-        <Header />
-        <div className="absolute border-2 w-[53rem] h-[37rem] bg-mudgreen -z-50 fixed top-[8rem] left-1/4 p-2 overflow-y-auto">{children}</div>
+        <div>
+          <Intro />
+        </div>
+        <div>
+          <Header />
+          <div className="container border-2 w-[53rem] h-[35rem] bg-mudgreen -z-50 p-2 overflow-y-auto">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
