@@ -10,23 +10,23 @@ import hangmanovie from "@/public/moviexplorer.jpg";
 export const links = [
   {
     name: "Experience",
-    hash: "#experience",
+    hash: "/",
   },
   {
     name: "Projects",
-    hash: "#projects",
+    hash: "projects",
   },
   {
     name: "Skills",
-    hash: "#skills",
+    hash: "skills",
   },
   {
     name: "Education",
-    hash: "#education",
+    hash: "education",
   },
   {
     name: "Contact",
-    hash: "#contact",
+    hash: "contact",
   },
 ] as const;
 
@@ -70,7 +70,7 @@ export const experiencesData = [
   {
     title: "Article editor",
     company:
-      "GIZ (German Corporation for International Cooperation) - Brussels Office",
+      "GIZ (German Development Agency) - Brussels Office",
     location: "Remote, NL",
     description:
       "A freelance work on policy research papers. The project is titled Strategic Partnership for the Implementation of Paris Agreement (SPIPA). I edited documents related to climate change and energy policy in Indonesia.",

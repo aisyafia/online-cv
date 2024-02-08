@@ -24,7 +24,7 @@ const Intro = () => {
       </div>
 
       <div className="w-[12rem] h-[20rem]">
-        <h3 className="text-2xl text-center mb-4">Hello, I&apos;m Fia</h3>
+        <h3 className="text-center mb-4">Hello, I&apos;m Fia</h3>
         <p className="mb-2">
           I was born and raised in Indonesia. I moved to the Netherlands in
           2020.{" "}
