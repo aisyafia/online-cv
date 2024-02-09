@@ -4,8 +4,8 @@
 
 html {
   position: relative;
-  min-height: 100%;
   box-sizing: border-box;
+  max-height: 100vh;
 }
 
 *,
@@ -20,15 +20,15 @@ p {
 }
 
 h1 {
-  @apply text-4xl font-bold
+  @apply text-4xl font-bold;
 }
 
 h3 {
-  @apply text-xl font-semibold
+  @apply text-xl font-semibold;
 }
 
 h5 {
-  @apply text-base font-normal
+  @apply text-base font-normal;
 }
 
 .bg-purple {
@@ -67,4 +67,8 @@ h5 {
   border-radius: 20px;
   background-clip: content-box;
   margin: 0 10px;
+}
+
+.entry-container {
+  @apply border border-white rounded-md m-4 p-2;
 }
