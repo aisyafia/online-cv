@@ -1,14 +1,17 @@
-"use client";
-
 import { experiencesData } from "@/lib/data";
-import { motion, useScroll } from "framer-motion";
+import { Motion } from "./Motion";
 
 const Experience = () => {
   return (
     <section className="scroll-mt-16 max-w-[50rem]">
       {experiencesData.map((exp) => {
         return (
-          <div key={exp.title} className="entry-container">
+          <Motion
+            key={exp.title}
+            className="entry-container"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+          >
             <h3>{exp.title}</h3>
             <div className="flex justify-start items-center gap-2">
               <h5>
@@ -18,7 +21,7 @@ const Experience = () => {
             </div>
 
             <p>{exp.description}</p>
-          </div>
+          </Motion>
         );
       })}
     </section>
