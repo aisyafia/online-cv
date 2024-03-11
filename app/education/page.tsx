@@ -1,11 +1,13 @@
 import { educationsData } from "@/lib/data";
+import { Motion } from "@/components/Motion";
 
 const eduPage = () => {
   return (
     <main>
       {educationsData.map((edu) => {
         return (
-          <div key={edu.degree} className="entry-container">
+          <Motion key={edu.degree} className="entry-container" initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}>
             <h3>
               {edu.degree} - {edu.school}
             </h3>
@@ -13,7 +15,7 @@ const eduPage = () => {
               {edu.location} - {edu.year}
             </h5>
             <p>{edu.description}</p>
-          </div>
+          </Motion>
         );
       })}
     </main>
