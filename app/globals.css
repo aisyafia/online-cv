@@ -72,3 +72,21 @@ h5 {
 .entry-container {
   @apply border border-white rounded-md m-4 p-2;
 }
+
+.card-suit::before,
+.card-suit::after {
+  position: absolute;
+  content: attr(data-suit);
+  font-size: 0.75rem;
+}
+
+.card-suit::before {
+  top: 0.125rem;
+  left: 0.125rem
+}
+
+.card-suit::after {
+  bottom: 0.125rem;
+  right: 0.125rem;
+  transform: rotate(180);
+}
