@@ -36,7 +36,7 @@ h5 {
 }
 
 .bg-mudgreen {
-  @apply bg-[#8B8A64] rounded-2xl;
+  @apply bg-[#7b7957] rounded-2xl;
 }
 
 .trapezoid {
@@ -82,7 +82,7 @@ h5 {
 
 .card-suit::before {
   top: 0.125rem;
-  left: 0.125rem
+  left: 0.125rem;
 }
 
 .card-suit::after {

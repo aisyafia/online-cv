@@ -1,8 +1,9 @@
 import "./globals.css";
-import { Noto_Sans, Lexend } from "next/font/google";
+import { Noto_Sans, Raleway } from "next/font/google";
 import { Header, Intro } from "@/components";
 
 const notosans = Noto_Sans({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Lutfia Aisya | Resume",
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notosans.className} bg-sky-950 text-violet-50 p-10 mx-auto container flex justify-start gap-2 items-center max-h-[105vh]`}
+        className={`${raleway.className} bg-sky-950 text-violet-50 p-10 mx-auto container flex justify-start gap-2 items-center max-h-[105vh]`}
       >
         <div className="bg-[#676394] absolute end-0.5 -z-10 left-0.5 h-[20rem] rounded-full blur-[10rem] sm:w-[40rem]"></div>
         <div className="bg-[#676394] absolute end-0.5 -z-10 left-2/3 h-[20rem] rounded-full blur-[10rem] sm:w-[28rem]"></div>

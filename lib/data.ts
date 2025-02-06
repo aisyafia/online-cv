@@ -32,12 +32,21 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Frontend Developer",
+    company: "Atabix",
+    location: "Amsterdam, NL",
+    description:
+      "A Dutch software provider and knowledge partner for (semi)-governments.",
+    icon: React.createElement(CgWorkAlt),
+    date: "04/24 - present",
+  },
+  {
     title: "Frontend Web Development Intern",
     company: "NLC Health Ventures",
     location: "Amsterdam, NL",
     description:
       "A venture capital company focusing on healthtech innovations. My project was to design, create, and style the pages and components of their internal applications.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "09/23 - 02/24",
   },
   {
@@ -55,7 +64,7 @@ export const experiencesData = [
     location: "Amsterdam, NL",
     description:
       "An on-demand grocery delivery service. My key responsibilities were daily operations management, including performance, fleet, and inventory management, data administration, and customer service.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "01/22 - 10/22",
   },
   {
@@ -64,17 +73,16 @@ export const experiencesData = [
     location: "Amsterdam, NL",
     description:
       "An Indonesian restaurant and art gallery. My responsibilities were daily customer service and inventory management",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "01/21 - 12/21",
   },
   {
     title: "Article editor",
-    company:
-      "GIZ (German Development Agency) - Brussels Office",
+    company: "GIZ (German Development Agency) - Brussels Office",
     location: "Remote, NL",
     description:
       "A freelance work on policy research papers. The project is titled Strategic Partnership for the Implementation of Paris Agreement (SPIPA). I edited documents related to climate change and energy policy in Indonesia.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "08/20 - 09/20",
   },
   {
@@ -83,7 +91,7 @@ export const experiencesData = [
     location: "Jakarta, ID",
     description:
       "A financial technology company serving as crowdlending platform, focusing on agriculture industry. I initiated the Business Development and Project Management teams, created standardized process for projects/loans application, approval, monitoring, and reporting system, and I also developed strategies for users retention and acquisition.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "01/19 - 01/20",
   },
   {
@@ -92,7 +100,7 @@ export const experiencesData = [
     location: "Jakarta, ID",
     description:
       "An ecommerce platform for fresh produce. I conducted Impact Assesment research and represented the company in public events.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "01/18 - 01/19",
   },
   {
@@ -101,7 +109,7 @@ export const experiencesData = [
     location: "Brussels, BE",
     description:
       "A part-time student job, I administered research on Indonesian companies' ownership data.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "10/16 - 08/17",
   },
   {
@@ -110,7 +118,7 @@ export const experiencesData = [
     location: "Jakarta, ID",
     description:
       "Microfinance Innovation Center for Research and Alternatives (MICRA) is a consultancy.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "01/14 - 08/15",
   },
 ] as const;
