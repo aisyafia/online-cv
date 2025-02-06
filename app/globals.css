@@ -70,7 +70,7 @@ h5 {
 }
 
 .entry-container {
-  @apply border border-white rounded-md m-4 p-2;
+  @apply rounded-md m-2 p-1;
 }
 
 .card-suit::before,

@@ -51,7 +51,7 @@ export const experiencesData = [
   },
   {
     title: "Full Stack Development",
-    company: "Techmongers (formerly Codaisseur)",
+    company: "Codaisseur",
     location: "Amsterdam, NL",
     description:
       "Highest ranked tech academy in the Netherlands. 10 intensive weeks where I learnt and applied modern technologies from back-end to front-end to build full-stack web.  Scored 90% in the final assessment.",
@@ -95,7 +95,7 @@ export const experiencesData = [
     date: "01/19 - 01/20",
   },
   {
-    title: "Business Process Improvement Specialist",
+    title: "Process Improvement Specialist",
     company: "TaniHub",
     location: "Jakarta, ID",
     description:
