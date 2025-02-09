@@ -1,11 +1,20 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import moviexplorer from "@/public/moviexplorer.jpg";
 import bs4ss from "@/public/bs4ss.jpg";
 import cocktailogy from "@/public/cocktailogy.jpg";
 import hangmanovie from "@/public/moviexplorer.jpg";
+import atabix from "@/public/atabix-logo-black.svg";
+import nlc from "@/public/nlc-new-orange.svg";
+import coda from "@/public/coda.png";
+import gorillas from "@/public/gorillas2.png";
+import bayu from "@/public/bayu.png";
+import giz from "@/public/giz.png";
+import tanifund from "@/public/tanifund.jpg";
+import tanihub from "@/public/tanihub.svg";
+import bvd from "@/public/bvd.png";
+import micra from "@/public/micra.png";
 
 export const links = [
   {
@@ -39,6 +48,7 @@ export const experiencesData = [
       "A Dutch software provider and knowledge partner for (semi)-governments.",
     icon: React.createElement(CgWorkAlt),
     date: "04/24 - present",
+    imageUrl: atabix,
   },
   {
     title: "Frontend Web Development Intern",
@@ -48,6 +58,7 @@ export const experiencesData = [
       "A venture capital company focusing on healthtech innovations. My project was to design, create, and style the pages and components of their internal applications.",
     icon: React.createElement(CgWorkAlt),
     date: "09/23 - 02/24",
+    imageUrl: nlc,
   },
   {
     title: "Full Stack Development",
@@ -57,6 +68,7 @@ export const experiencesData = [
       "Highest ranked tech academy in the Netherlands. 10 intensive weeks where I learnt and applied modern technologies from back-end to front-end to build full-stack web.  Scored 90% in the final assessment.",
     icon: React.createElement(LuGraduationCap),
     date: "10/22 - 01/23",
+    imageUrl: coda,
   },
   {
     title: "Warehouse Supervisor",
@@ -66,6 +78,7 @@ export const experiencesData = [
       "An on-demand grocery delivery service. My key responsibilities were daily operations management, including performance, fleet, and inventory management, data administration, and customer service.",
     icon: React.createElement(CgWorkAlt),
     date: "01/22 - 10/22",
+    imageUrl: gorillas,
   },
   {
     title: "Store Assistant",
@@ -75,6 +88,7 @@ export const experiencesData = [
       "An Indonesian restaurant and art gallery. My responsibilities were daily customer service and inventory management",
     icon: React.createElement(CgWorkAlt),
     date: "01/21 - 12/21",
+    imageUrl: bayu,
   },
   {
     title: "Article editor",
@@ -84,6 +98,7 @@ export const experiencesData = [
       "A freelance work on policy research papers. The project is titled Strategic Partnership for the Implementation of Paris Agreement (SPIPA). I edited documents related to climate change and energy policy in Indonesia.",
     icon: React.createElement(CgWorkAlt),
     date: "08/20 - 09/20",
+    imageUrl: giz,
   },
   {
     title: "Business Development Lead",
@@ -93,6 +108,7 @@ export const experiencesData = [
       "A financial technology company serving as crowdlending platform, focusing on agriculture industry. I initiated the Business Development and Project Management teams, created standardized process for projects/loans application, approval, monitoring, and reporting system, and I also developed strategies for users retention and acquisition.",
     icon: React.createElement(CgWorkAlt),
     date: "01/19 - 01/20",
+    imageUrl: tanifund,
   },
   {
     title: "Process Improvement Specialist",
@@ -102,6 +118,7 @@ export const experiencesData = [
       "An ecommerce platform for fresh produce. I conducted Impact Assesment research and represented the company in public events.",
     icon: React.createElement(CgWorkAlt),
     date: "01/18 - 01/19",
+    imageUrl: tanihub,
   },
   {
     title: "Sourcing Encodage",
@@ -111,6 +128,7 @@ export const experiencesData = [
       "A part-time student job, I administered research on Indonesian companies' ownership data.",
     icon: React.createElement(CgWorkAlt),
     date: "10/16 - 08/17",
+    imageUrl: bvd,
   },
   {
     title: "Researcher",
@@ -120,6 +138,7 @@ export const experiencesData = [
       "Microfinance Innovation Center for Research and Alternatives (MICRA) is a consultancy.",
     icon: React.createElement(CgWorkAlt),
     date: "01/14 - 08/15",
+    imageUrl: micra,
   },
 ] as const;
 
@@ -153,13 +172,14 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
   "JavaScript",
   "TypeScript",
+  "Vue",
   "React",
   "Next.js",
   "Node.js",
+  "HTML",
+  "CSS",
   "Git",
   "Github",
   "Tailwind",

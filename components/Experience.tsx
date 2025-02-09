@@ -12,7 +12,7 @@ const Experience = () => {
   const [openExp, setOpenExp] = useState<string | null>(null);
 
   return (
-    <section className="scroll-mt-16 max-w-[50rem] grid grid-cols-2 gap-4">
+    <section className="scroll-mt-16 max-w-[60rem] grid grid-cols-2 gap-4 p-4">
       {experiencesData.map((exp) => {
         const isOpen = openExp === exp.title;
 
@@ -20,7 +20,7 @@ const Experience = () => {
           <button
             key={exp.title}
             onClick={() => setOpenExp(isOpen ? null : exp.title)}
-            className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-300 transition"
+            className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 transition"
           >
             <Motion
               key={exp.title}
@@ -30,12 +30,14 @@ const Experience = () => {
             >
               <div className="flex items-center gap-2">
                 {exp.icon}
-                <h4 className={`${prompt.className} text-left text-lg`}>
+                <h4
+                  className={`${prompt.className} text-left text-lg font-bold`}
+                >
                   {exp.title}
                 </h4>
               </div>
-              <div className="flex justify-start items-center gap-2">
-                <h5>
+              <div className="text-center gap-2">
+                <h5 className="text-base font-light">
                   {exp.company} - {exp.location}
                 </h5>
               </div>
@@ -48,6 +50,8 @@ const Experience = () => {
                 open={isOpen}
                 closeDialog={() => setOpenExp(null)}
                 description={exp.description}
+                title={exp.title}
+                logo={exp.imageUrl}
               />
             )}
           </button>

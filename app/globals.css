@@ -70,7 +70,7 @@ h5 {
 }
 
 .entry-container {
-  @apply rounded-md m-2 p-1;
+  @apply rounded-md m-2 p-1 flex flex-col items-center;
 }
 
 .card-suit::before,
