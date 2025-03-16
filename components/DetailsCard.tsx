@@ -16,7 +16,7 @@ const DetailsCard = (props: any) => {
   return (
     <Transition show={props.open} as={Fragment}>
       <Dialog onClose={props.closeDialog} className="relative z-10">
-        <div className="fixed inset-32 flex w-screen items-center justify-center p-4">
+        <div className="fixed inset-y-0 left-[7%] -top-[7%] flex w-screen items-center justify-center p-4">
           <Transition
             as={Fragment}
             show={props.open}

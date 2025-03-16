@@ -20,7 +20,7 @@ const ProjectPage = () => {
               setOpenProject(project.title);
               openDialog();
             }}
-            className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 transition"
+            className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 transition"
           >
             <Motion
               key={project.title}
