@@ -1,16 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { links } from "@/lib/data";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className="relative -mt-20">
       <div className="text-violet-100 flex items-center justify-center gap-1 text-center ">
         {links.map((link) => {
+          const isActive =
+            pathname ===
+            (link.hash.startsWith("/") ? link.hash : `/${link.hash}`);
+
           return (
             <Link
-              className="w-[10rem] hover:text-violet-300 focus:ring-[#473E66] focus:border-[#676394] active:border-b-[#676394]"
-              href={link.hash}
+              className={`w-[10rem] hover:text-violet-300 ${
+                isActive ? "border-b-2 border-[#676394] text-violet-300" : ""
+              }`}
+              href={`/${link.hash}`}
               key={link.hash}
             >
               {link.name}

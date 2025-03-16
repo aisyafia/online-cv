@@ -32,7 +32,7 @@ const DetailsCard = (props: any) => {
               <div className="absolute -z-10 left-2/3 top-10 h-[20rem] w-[28rem] rounded-full blur-[10rem] bg-[#676394]"></div>
 
               <div className="relative flex justify-between">
-                <DialogTitle className="font-bold text-slate-200 text-lg -top-6 absolute">
+                <DialogTitle className="font-bold text-slate-200 text-lg -top-6 absolute mb-6">
                   {props.title}
                 </DialogTitle>
                 <button
@@ -50,8 +50,8 @@ const DetailsCard = (props: any) => {
                   alt={props.title}
                   width={0}
                   height={0}
-                  sizes="90vw"
-                  className="w-auto h-auto"
+                  sizes="50vw"
+                  className="w-auto h-auto mt-4"
                 />
               </div>
               <Description className="text-sm font-light">
