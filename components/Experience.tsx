@@ -5,11 +5,13 @@ import { Motion } from "./Motion";
 import { useState } from "react";
 import { Prompt } from "next/font/google";
 import { DetailsCard } from "./DetailsCard";
+import { useDialog } from "./DialogProvider";
 
 const prompt = Prompt({ subsets: ["latin"], weight: ["300"] });
 
 const Experience = () => {
   const [openExp, setOpenExp] = useState<string | null>(null);
+  const { isDialogOpen, openDialog, closeDialog } = useDialog();
 
   return (
     <section className="scroll-mt-16 max-w-[60rem] grid grid-cols-2 gap-4 p-4">
@@ -19,7 +21,10 @@ const Experience = () => {
         return (
           <button
             key={exp.title}
-            onClick={() => setOpenExp(isOpen ? null : exp.title)}
+            onClick={() => {
+              setOpenExp(exp.title);
+              openDialog();
+            }}
             className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 transition"
           >
             <Motion
@@ -45,10 +50,13 @@ const Experience = () => {
                 <h5 className="text-base font-light">{exp.date}</h5>
               </div>
             </Motion>
-            {isOpen && (
+            {isDialogOpen && isOpen && (
               <DetailsCard
                 open={isOpen}
-                closeDialog={() => setOpenExp(null)}
+                closeDialog={() => {
+                  setOpenExp(null);
+                  closeDialog();
+                }}
                 description={exp.description}
                 title={exp.title}
                 logo={exp.imageUrl}
