@@ -1,21 +1,48 @@
+"use client";
+
 import { projectsData } from "@/lib/data";
 import { Motion } from "@/components/Motion";
+import { useState } from "react";
+import { useDialog } from "@/components/DialogProvider";
+import { DetailsCard } from "@/components";
 
 const ProjectPage = () => {
+  const [openProject, setOpenProject] = useState<string | null>(null);
+  const { isDialogOpen, openDialog, closeDialog } = useDialog();
   return (
-    <main className="scroll-mt-16 max-w-[50rem]">
+    <main className="scroll-mt-16 max-w-[50rem] grid grid-cols-2 gap-4 p-4">
       {projectsData.map((project) => {
+        const isOpen = openProject === project.title;
         return (
-          <Motion
+          <button
             key={project.title}
-            className="entry-container"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
+            onClick={() => {
+              setOpenProject(project.title);
+              openDialog();
+            }}
+            className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 transition"
           >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <button></button>
-          </Motion>
+            <Motion
+              key={project.title}
+              className="entry-container"
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              <h3>{project.title}</h3>
+            </Motion>
+            {isDialogOpen && isOpen && (
+              <DetailsCard
+                open={isOpen}
+                closeDialog={() => {
+                  setOpenProject(null);
+                  closeDialog();
+                }}
+                description={project.description}
+                title={project.title}
+                logo={project.imageUrl}
+              />
+            )}
+          </button>
         );
       })}
     </main>

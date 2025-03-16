@@ -49,31 +49,31 @@ const Intro = () => {
         <p>Welcome to my page.</p>
       </div>
 
-      <div className="">
+      <div className="mt-6 flex gap-5">
         <Link
-          href="#contact"
-          className="group flex flex-row gap-2 items-center bg-purple rounded-full w-max outline-none"
+          href="/contact"
+          className="flex flex-row gap-1 items-center rounded-full w-max outline-none text-md "
         >
-          Contact me here <BsArrowRightCircleFill />
+          Contact me <BsArrowRightCircleFill />
         </Link>
         <a
           href="/LA_FE_2025_03.pdf"
           target="_blank"
-          className="flex flex-row gap-2 items-center bg-purple rounded-full w-max"
+          className="flex flex-row gap-1 items-center rounded-full w-max"
         >
           CV <BsDownload />
         </a>
         <a
           href="https://www.linkedin.com/in/aisyafia/"
           target="_blank"
-          className="flex flex-row items-center bg-purple rounded-full w-max"
+          className="flex flex-row items-center rounded-full w-max"
         >
           <BsLinkedin />
         </a>
         <a
           href="https://github.com/aisyafia"
           target="_blank"
-          className="flex flex-row items-center bg-purple rounded-full w-max"
+          className="flex flex-row items-center rounded-full w-max"
         >
           <BsGithub />
         </a>
