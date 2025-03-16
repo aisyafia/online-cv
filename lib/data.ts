@@ -4,7 +4,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import moviexplorer from "@/public/moviexplorer.jpg";
 import bs4ss from "@/public/bs4ss.jpg";
 import cocktailogy from "@/public/cocktailogy.jpg";
-import hangmanovie from "@/public/moviexplorer.jpg";
+import hangmanovie from "@/public/hangmanovie.jpg";
 import atabix from "@/public/atabix-logo-black.svg";
 import nlc from "@/public/nlc-new-orange.svg";
 import coda from "@/public/coda.png";
@@ -15,6 +15,8 @@ import tanifund from "@/public/tanifund.jpg";
 import tanihub from "@/public/tanihub.svg";
 import bvd from "@/public/bvd.png";
 import micra from "@/public/micra.png";
+import iob from "@/public/iobuniantwerp.jpeg";
+import ibs from "@/public/ibs.png";
 
 export const links = [
   {
@@ -205,6 +207,7 @@ export const educationsData = [
     description:
       "Development Evaluation and Management - Local Institution and Poverty Reduction track. Final thesis theme: microfinance, climate change, development policy.",
     year: "2015-2017",
+    imageUrl: iob,
   },
   {
     degree: "Bachelor of Economy",
@@ -213,5 +216,6 @@ export const educationsData = [
     description:
       "Major: banking, finance, and risk management. Final thesis theme: stock market, optimum portfolio, Initial Public Offerings.",
     year: "2008-2012",
+    imageUrl: ibs,
   },
 ] as const;

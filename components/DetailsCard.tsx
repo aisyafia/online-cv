@@ -16,7 +16,7 @@ const DetailsCard = (props: any) => {
   return (
     <Transition show={props.open} as={Fragment}>
       <Dialog onClose={props.closeDialog} className="relative z-10">
-        <div className="fixed inset-y-0 left-[7%] -top-[7%] flex w-screen items-center justify-center p-4">
+        <div className="fixed inset-y-0 left-[7%] -top-[7%] flex w-screen items-center justify-center p-2">
           <Transition
             as={Fragment}
             show={props.open}
@@ -27,7 +27,7 @@ const DetailsCard = (props: any) => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >
-            <DialogPanel className="max-w-lg min-h-40 relative space-y-4 border p-10 rounded-2xl">
+            <DialogPanel className="max-w-xl min-h-40 relative space-y-4 border p-8 rounded-2xl">
               <div className="absolute -z-10 left-0 top-0 h-[20rem] w-[40rem] rounded-full blur-[10rem] bg-[#676394]"></div>
               <div className="absolute -z-10 left-2/3 top-10 h-[20rem] w-[28rem] rounded-full blur-[10rem] bg-[#676394]"></div>
 
@@ -37,7 +37,7 @@ const DetailsCard = (props: any) => {
                 </DialogTitle>
                 <button
                   onClick={props.closeDialog}
-                  className="absolute -top-6 -right-6 z-10 w-fit p-1 bg-transparent text-slate-200 hover:text-slate-400"
+                  className="absolute -top-10 -right-6 z-10 w-fit p-1 bg-transparent text-slate-200 hover:text-slate-400"
                 >
                   <IoMdClose
                     size="20px"
