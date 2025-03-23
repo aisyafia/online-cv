@@ -14,7 +14,7 @@ const Experience = () => {
   const { isDialogOpen, openDialog, closeDialog } = useDialog();
 
   return (
-    <section className="scroll-mt-16 max-w-[60rem] grid grid-cols-2 gap-4 p-4">
+    <main className="scroll-mt-16 max-w-[60rem] grid grid-cols-2 gap-4 p-4">
       {experiencesData.map((exp) => {
         const isOpen = openExp === exp.title;
 
@@ -35,11 +35,9 @@ const Experience = () => {
             >
               <div className="flex items-center gap-2">
                 {exp.icon}
-                <h4
-                  className={`${prompt.className} text-left text-lg font-bold`}
-                >
+                <h3 text-left font-bold>
                   {exp.title}
-                </h4>
+                </h3>
               </div>
               <div className="text-center gap-2">
                 <h5 className="text-base font-light">
@@ -60,12 +58,13 @@ const Experience = () => {
                 description={exp.description}
                 title={exp.title}
                 logo={exp.imageUrl}
+                web={exp.web}
               />
             )}
           </button>
         );
       })}
-    </section>
+    </main>
   );
 };
 

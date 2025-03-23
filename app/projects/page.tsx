@@ -40,6 +40,7 @@ const ProjectPage = () => {
                 description={project.description}
                 title={project.title}
                 logo={project.imageUrl}
+                web={project.web}
               />
             )}
           </button>

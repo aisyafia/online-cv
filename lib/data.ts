@@ -52,6 +52,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "04/24 - present",
     imageUrl: atabix,
+    web: "https://www.atabix.nl/",
   },
   {
     title: "Frontend Web Development Intern",
@@ -62,6 +63,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "09/23 - 02/24",
     imageUrl: nlc,
+    web: "https://www.nlc.health/",
   },
   {
     title: "Full Stack Development",
@@ -92,6 +94,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "01/21 - 12/21",
     imageUrl: bayu,
+    web: "https://www.bayufoodandart.com/",
   },
   {
     title: "Article editor",
@@ -102,6 +105,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "08/20 - 09/20",
     imageUrl: giz,
+    web: "https://www.bayufoodandart.com/",
   },
   {
     title: "Business Development Lead",
@@ -132,6 +136,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "10/16 - 08/17",
     imageUrl: bvd,
+    web: "https://www.moodys.com/web/en/us/capabilities/company-reference-data/orbis.html",
   },
   {
     title: "Researcher",
@@ -142,6 +147,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "01/14 - 08/15",
     imageUrl: micra,
+    web: "https://www.micra-indo.org/",
   },
 ] as const;
 
@@ -152,6 +158,7 @@ export const projectsData = [
       "A self-practice project using Typescript, Next.js, and Tailwind.",
     tags: ["React", "Next.js", "Tailwind", "Vercel"],
     imageUrl: cocktailogy,
+    web: "https://cocktailogy.vercel.app/",
   },
   {
     title: "Big Sister for Small Sister",
@@ -159,18 +166,21 @@ export const projectsData = [
       "A website for women volunteers, focusing on supporting young, marginalised girls in Northern Kenya. Their first project was fundraising, to provide sustainable and reusable menstrual kits for school girls in Samburu.",
     tags: ["React", "TypeScript", "MUI", "Netlify"],
     imageUrl: bs4ss,
+    web: "https://bigsis4smallsis.com/",
   },
   {
     title: "MoviExplorer",
     description: "A hobby project for self-practice.",
     tags: ["React", "Typescript", "Redux", "MUI"],
     imageUrl: moviexplorer,
+    web: "https://cinemoviexplorer.netlify.app/",
   },
   {
     title: "Hangman: Movie Edition",
     description: "A group project during the bootcamp.",
     tags: ["React", "Axios", "Styled Components"],
     imageUrl: hangmanovie,
+    web: "https://hangmanmovies.netlify.app/hangman",
   },
 ] as const;
 

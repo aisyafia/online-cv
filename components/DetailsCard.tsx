@@ -8,9 +8,9 @@ import {
   Transition,
 } from "@headlessui/react";
 import Image from "next/image";
-import closeIcon from "@/public/close.svg";
 import { IoMdClose } from "react-icons/io";
 import { Fragment } from "react";
+import { IoIosLink } from "react-icons/io";
 
 const DetailsCard = (props: any) => {
   return (
@@ -54,6 +54,15 @@ const DetailsCard = (props: any) => {
                   className="w-auto h-auto mt-4"
                 />
               </div>
+              {props.web && (
+                <a
+                  href={props.web}
+                  target="_blank"
+                  className="flex flex-row items-center rounded-full text-xs gap-1"
+                >
+                  Visit the website <IoIosLink />
+                </a>
+              )}
               <Description className="text-sm font-light">
                 {props.description}
               </Description>
