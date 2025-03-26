@@ -6,47 +6,45 @@ import { BsDownload } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { Quicksand } from "next/font/google";
+import { TextGenerateEffect } from "./ui/GenerateText";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 const Intro = () => {
   return (
-    <section className="w-[18rem] p-4">
-      <h1 className={`${quicksand.className} font-light`}>Lutfia Aisya</h1>
-      <h3 className={`${quicksand.className} font-light`}>
+    <section className="w-[18rem] h-[90vh] p-4">
+      <TextGenerateEffect
+        className={`${quicksand.className} text-4xl`}
+        words="Lutfia Aisya"
+      />
+      <h3 className={`${quicksand.className} font-light mb-4`}>
         Frontend Developer
       </h3>
-      <div className="flex justify-start items-center">
+
+      <div className="flex justify-start items-center mb-4">
         <div>
           <Image
             src={profpic}
             alt="Lutfia picture"
             width={187}
             height={140}
-            className="rounded-[20px] object-cover shadow-xl"
+            className="rounded-[20px] object-cover shadow-md shadow-neutral-400"
           />
         </div>
       </div>
 
-      <div className="w-[12rem] h-[15rem]">
-        <h3 className={`${quicksand.className} text-center mb-4`}>
-          Hello, I&apos;m Fia
-        </h3>
-        <p className="mb-2">
-          I was born and raised in Indonesia. I moved to the Netherlands in
-          2020.{" "}
-        </p>
+      <div className="w-[12rem]">
+        <TextGenerateEffect
+          className="mb-2 text-sm"
+          words="Curious, creative, adaptive — I strive to craft user-centric, scalable, and impactful digital solutions"
+        />
 
-        <p className="mb-2">
-          I started my code journey at the end of 2022. I joined a Full Stack
-          Development bootcamp in Amsterdam.
-        </p>
-
-        <p className="mb-2">
-          I am now a Frontend Developer in a Dutch Saas company.
-        </p>
-
-        <p>Welcome to my page.</p>
+        <span
+          className={`${quicksand.className} font-light text-sm leading-tight mb-6 text-wrap tracking-tight lin`}
+        >
+          Started off my education in finance, grown into research and strategy,
+          moved to the Netherlands in '20, switched into web development in '22.
+        </span>
       </div>
 
       <div className="mt-6 flex gap-5">

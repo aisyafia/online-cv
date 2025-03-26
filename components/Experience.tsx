@@ -35,9 +35,7 @@ const Experience = () => {
             >
               <div className="flex items-center gap-2">
                 {exp.icon}
-                <h3 text-left font-bold>
-                  {exp.title}
-                </h3>
+                <h3 className="text-left">{exp.title}</h3>
               </div>
               <div className="text-center gap-2">
                 <h5 className="text-base font-light">

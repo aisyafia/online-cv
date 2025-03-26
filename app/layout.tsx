@@ -21,10 +21,11 @@ export default function RootLayout({
     <DialogProvider>
       <html lang="en">
         <body
-          className={`${raleway.className} bg-sky-950 text-violet-50 p-10 mx-auto container flex justify-start gap-2 items-center max-h-[105vh]`}
+          className={`${raleway.className} bg-sky-950 text-violet-50 p-10 mx-auto container flex justify-center gap-8 items-center h-[99vh] `}
         >
           <div className="bg-[#676394] absolute end-0.5 -z-10 left-0.5 h-[20rem] rounded-full blur-[10rem] sm:w-[40rem]"></div>
           <div className="bg-[#676394] absolute end-0.5 -z-10 left-2/3 h-[20rem] rounded-full blur-[10rem] sm:w-[28rem]"></div>
+
           <div>
             <Intro />
           </div>
