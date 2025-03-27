@@ -44,27 +44,42 @@ const DetailsCard = (props: any) => {
                     className="transition-colors duration-200"
                   />
                 </button>
+              </div>
 
+              <div className="grid grid-cols-2 items-end gap-2">
                 <Image
                   src={props.logo}
                   alt={props.title}
                   width={0}
                   height={0}
-                  sizes="50vw"
-                  className="w-auto h-auto mt-4"
+                  sizes="70vw"
+                  className="w-auto h-auto mt-2"
                 />
+                {props.web && (
+                  <div className="flex flex-row">
+                    <a
+                      href={props.web}
+                      target="_blank"
+                      className="flex flex-row items-center rounded-full text-xs gap-1"
+                    >
+                      Visit the website <IoIosLink />
+                    </a>
+                  </div>
+                )}
               </div>
-              {props.web && (
-                <a
-                  href={props.web}
-                  target="_blank"
-                  className="flex flex-row items-center rounded-full text-xs gap-1"
-                >
-                  Visit the website <IoIosLink />
-                </a>
-              )}
               <Description className="text-sm font-light">
                 {props.description}
+              </Description>
+
+              <Description>
+                {props.intro && (
+                  <span className="font-semibold">{props.intro}</span>
+                )}
+
+                {props.details &&
+                  props.details.map((detail: string) => {
+                    return <li className="font-light">{detail}</li>;
+                  })}
               </Description>
             </DialogPanel>
           </Transition>

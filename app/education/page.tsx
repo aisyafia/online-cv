@@ -43,6 +43,7 @@ const eduPage = () => {
                 description={edu.description}
                 title={edu.school}
                 logo={edu.imageUrl}
+                web={edu.web}
               />
             )}
           </button>

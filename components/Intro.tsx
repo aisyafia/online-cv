@@ -12,7 +12,7 @@ const quicksand = Quicksand({ subsets: ["latin"] });
 
 const Intro = () => {
   return (
-    <section className="w-[18rem] h-[90vh] p-4">
+    <section className="w-[18rem] h-[97vh] p-4">
       <TextGenerateEffect
         className={`${quicksand.className} text-4xl`}
         words="Lutfia Aisya"
@@ -35,12 +35,12 @@ const Intro = () => {
 
       <div className="w-[12rem]">
         <TextGenerateEffect
-          className="mb-2 text-sm"
+          className="mb-2 text-sm font-semibold"
           words="Curious, creative, adaptive — I strive to craft user-centric, scalable, and impactful digital solutions"
         />
 
         <span
-          className={`${quicksand.className} font-light text-sm leading-tight mb-6 text-wrap tracking-tight lin`}
+          className={`${quicksand.className} font-light text-sm leading-snug text-wrap tracking-tight`}
         >
           Started off my education in finance, grown into research and strategy,
           moved to the Netherlands in '20, switched into web development in '22.

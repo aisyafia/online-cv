@@ -37,11 +37,7 @@ const Experience = () => {
                 {exp.icon}
                 <h3 className="text-left">{exp.title}</h3>
               </div>
-              <div className="text-center gap-2">
-                <h5 className="text-base font-light">
-                  {exp.company} - {exp.location}
-                </h5>
-              </div>
+
               <div>
                 <h5 className="text-base font-light">{exp.date}</h5>
               </div>
@@ -57,6 +53,8 @@ const Experience = () => {
                 title={exp.title}
                 logo={exp.imageUrl}
                 web={exp.web}
+                intro={exp.intro}
+                details={exp.details}
               />
             )}
           </button>
