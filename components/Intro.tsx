@@ -12,7 +12,7 @@ const quicksand = Quicksand({ subsets: ["latin"] });
 
 const Intro = () => {
   return (
-    <section className="xs:w-full md:w-[18rem] md:h-[97vh] p-4 ">
+    <section className="w-full flex flex-col items-center md:items-start md:w-[18rem] md:h-[97vh] p-4 ">
       <TextGenerateEffect
         className={`${quicksand.className} text-4xl`}
         words="Lutfia Aisya"
@@ -21,19 +21,17 @@ const Intro = () => {
         Frontend Developer
       </h3>
 
-      <div className="flex justify-start items-center mb-4">
-        <div>
-          <Image
-            src={profpic}
-            alt="Lutfia picture"
-            width={187}
-            height={140}
-            className="rounded-[20px] object-cover shadow-md shadow-neutral-400"
-          />
-        </div>
+      <div className="flex justify-center md:justify-start items-center mb-4">
+        <Image
+          src={profpic}
+          alt="Lutfia picture"
+          width={187}
+          height={140}
+          className="rounded-[20px] object-cover shadow-md shadow-neutral-400"
+        />
       </div>
 
-      <div>
+      <div className="">
         <TextGenerateEffect
           className="mb-2 text-sm font-semibold"
           words="Curious, creative, adaptive — I strive to craft user-centric, scalable, and impactful digital solutions"
