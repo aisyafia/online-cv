@@ -10,7 +10,7 @@ const ProjectPage = () => {
   const [openProject, setOpenProject] = useState<string | null>(null);
   const { isDialogOpen, openDialog, closeDialog } = useDialog();
   return (
-    <main className="scroll-mt-16 max-w-[50rem] grid grid-cols-2 gap-4 p-4">
+    <main className="scroll-mt-16 max-w-[50rem] grid grid-cols-1 p-2 gap-4 md:grid-cols-2 md:p-4">
       {projectsData.map((project) => {
         const isOpen = openProject === project.title;
         return (

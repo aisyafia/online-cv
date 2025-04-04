@@ -29,7 +29,7 @@ export default function RootLayout({
             <Intro />
           </div>
 
-          <div className="mt-6 md:mt-0">
+          <div className="mt-6 md:mt-0 max-w-full">
             <Header />
             <ChildrenWrapper>{children}</ChildrenWrapper>
           </div>

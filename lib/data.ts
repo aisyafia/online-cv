@@ -65,7 +65,7 @@ export const experiencesData = [
     ],
   },
   {
-    title: "Frontend Web Development Intern",
+    title: "Frontend Intern",
     company: "NLC Health Ventures",
     location: "Amsterdam, NL",
     description:

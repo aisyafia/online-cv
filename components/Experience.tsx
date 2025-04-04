@@ -14,7 +14,7 @@ const Experience = () => {
   const { isDialogOpen, openDialog, closeDialog } = useDialog();
 
   return (
-    <main className="scroll-mt-16 max-w-[60rem] grid grid-cols-2 gap-4 p-4">
+    <main className="scroll-mt-16 md:max-w-[60rem] grid grid-cols-1 p-2 md:grid-cols-2 gap-4 md:p-4">
       {experiencesData.map((exp) => {
         const isOpen = openExp === exp.title;
 
@@ -25,7 +25,7 @@ const Experience = () => {
               setOpenExp(exp.title);
               openDialog();
             }}
-            className="w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 transition"
+            className="md:w-full text-left p-1 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 transition"
           >
             <Motion
               key={exp.title}
@@ -35,7 +35,7 @@ const Experience = () => {
             >
               <div className="flex items-center gap-2">
                 {exp.icon}
-                <h3 className="text-left">{exp.title}</h3>
+                <h3 className="text-2xl md:text-lg">{exp.title}</h3>
               </div>
 
               <div>

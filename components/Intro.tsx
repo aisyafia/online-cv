@@ -31,14 +31,14 @@ const Intro = () => {
         />
       </div>
 
-      <div className="">
+      <div className="text-center md:text-start">
         <TextGenerateEffect
-          className="mb-2 text-sm font-semibold"
+          className="mb-2 text-2xl md:text-lg font-semibold"
           words="Curious, creative, adaptive — I strive to craft user-centric, scalable, and impactful digital solutions"
         />
 
         <span
-          className={`${quicksand.className} font-light text-sm leading-snug text-wrap tracking-tight`}
+          className={`${quicksand.className} font-light text-lg md:text-lg leading-snug text-wrap tracking-tight`}
         >
           Full-stack trained frontend developer.
         </span>

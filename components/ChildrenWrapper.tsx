@@ -10,7 +10,7 @@ const ChildrenWrapper = ({ children }: { children: React.ReactNode }) => {
       {isDialogOpen && (
         <div className="absolute inset-0 bg-black/10 backdrop-blur-md rounded-2xl z-10 transition-all duration-300" />
       )}
-      <div className="relative container w-[53rem] h-[75vh] p-2 overflow-y-auto z-0">
+      <div className="relative container md:w-[53rem] md:h-[75vh] p-2 overflow-y-auto z-0">
         {children}
       </div>
     </div>

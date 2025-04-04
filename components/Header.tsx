@@ -9,7 +9,7 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="relative -mt-20">
+    <header className="relative top-0 md:-mt-20">
       <div className="text-violet-100 flex items-center justify-center gap-1 text-center ">
         {links.map((link) => {
           const isActive =
