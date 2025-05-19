@@ -287,10 +287,10 @@ export const skillsData = [
 export const educationsData = [
   {
     degree: "MSc in Development Studies",
-    school: "University Antwerp - Institute of Development Policy",
+    school: "University Antwerp",
     location: "Antwerp, BE",
     description:
-      "Development Evaluation and Management - Local Institution and Poverty Reduction track. Final thesis theme: microfinance, climate change, development policy.",
+      "Institute of Development Policy and Management. Development Evaluation and Management - Local Institution and Poverty Reduction track. Final thesis theme: microfinance, climate change, development policy.",
     year: "2015-2017",
     imageUrl: iob,
     web: "https://www.uantwerpen.be/en/about-uantwerp/faculties/institute-of-development-policy/",
