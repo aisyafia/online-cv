@@ -6,7 +6,7 @@ import { useOutsideClick } from "@/lib/hooks/use-outside-click";
 import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
 
-export function ExpandableCardDemo(props: any) {
+export function ExpandableCard(props: any) {
   const [active, setActive] = useState<(typeof props)[number] | boolean | null>(
     null
   );
@@ -73,7 +73,7 @@ export function ExpandableCardDemo(props: any) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] min-h-[50vh] md:h-fit md:max-h-[90%] flex flex-col bg-[#676394] dark:bg-[#676394] sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[600px] min-h-[50vh] md:h-fit md:max-h-[90%] flex flex-col bg-[#676394] dark:bg-[#676394] sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -82,12 +82,12 @@ export function ExpandableCardDemo(props: any) {
                   src={active.src}
                   alt={active.title}
                   sizes="70vw"
-                  className="w-full h-auto sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-auto p-1 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
               </motion.div>
 
               <div>
-                <div className="flex justify-between items-start p-4">
+                <div className="flex justify-between items-center p-4">
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
@@ -106,15 +106,16 @@ export function ExpandableCardDemo(props: any) {
                       </motion.p>
                     )}
                   </div>
-
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-sky-950  hover:text-violet-400"
-                  >
-                    {active.ctaText}
-                  </motion.a>
+                  {active.ctaLink && (
+                    <motion.a
+                      layoutId={`button-${active.title}-${id}`}
+                      href={active.ctaLink}
+                      target="_blank"
+                      className="px-4 py-2 text-xs rounded-full font-semibold bg-sky-950  hover:text-violet-400"
+                    >
+                      {active.ctaText}
+                    </motion.a>
+                  )}
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
@@ -122,11 +123,20 @@ export function ExpandableCardDemo(props: any) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className=" text-xs md:text-sm lg:text-base h-20 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-xs md:text-sm h-20 md:h-55 pb-8 flex flex-col items-start gap-2 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
+
+                    {active.subcontent &&
+                      active.subcontent.map((detail: string) => {
+                        return (
+                          <li className="font-light" key={detail}>
+                            {detail}
+                          </li>
+                        );
+                      })}
                   </motion.div>
                 </div>
               </div>
@@ -150,12 +160,16 @@ export function ExpandableCardDemo(props: any) {
             >
               {props.title}
             </motion.h3>
-            <motion.h5
-              layoutId={`description-${props.description}-${id}`}
-              className="text-center md:text-sm"
-            >
-              {props.description}
-            </motion.h5>
+            {props.subtitle ? (
+              <motion.h5
+                layoutId={`description-${props.description}-${id}`}
+                className="text-center md:text-sm"
+              >
+                {props.duration}
+              </motion.h5>
+            ) : (
+              <></>
+            )}
           </div>
         </motion.div>
       </ul>
