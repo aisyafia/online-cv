@@ -62,7 +62,7 @@ export function ExpandableCardDemo(props: any) {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-transparent text-slate-400 hover:text-slate-200 rounded-full h-6 w-6"
+              className="flex absolute top-[22%] right-2 lg:hidden items-center justify-center bg-transparent text-slate-400 hover:text-slate-200 rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <IoMdClose
@@ -73,7 +73,7 @@ export function ExpandableCardDemo(props: any) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] min-h-[50vh] md:h-fit md:max-h-[90%] flex flex-col bg-sky-950 dark:bg-sky-950 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] min-h-[50vh] md:h-fit md:max-h-[90%] flex flex-col bg-[#676394] dark:bg-[#676394] sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -138,8 +138,10 @@ export function ExpandableCardDemo(props: any) {
         <motion.div
           layoutId={`card-${props.title}-${id}`}
           key={`props-${props.title}-${id}`}
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
           onClick={() => setActive(props)}
-          className="p-4 w-full flex flex-col md:flex-row items-center hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 rounded-xl cursor-pointer"
+          className="p-4 border border-gray-300 w-full flex flex-col md:flex-row items-center hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 rounded-xl cursor-pointer"
         >
           <div className="flex w-full flex-col justify-center items-center gap-2">
             <motion.h3

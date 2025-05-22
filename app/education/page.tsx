@@ -1,5 +1,3 @@
-"use client";
-
 import { educationsData } from "@/lib/data";
 import { ExpandableCardDemo } from "@/components/ui/ExpandableCard";
 
