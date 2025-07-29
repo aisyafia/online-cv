@@ -1,20 +1,167 @@
-import { ExpandableCard } from "@/components/ui/ExpandableCard";
-import { useState } from "react";
+"use client";
 
-interface Card {
-  suit: string;
-  value: string;
-}
+import { useState } from "react";
+import React from "react";
+import { Label } from "../../components/ui/label";
+import { Input } from "../../components/ui/input";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxOption,
+  ComboboxOptions,
+} from "@headlessui/react";
+
+const options = [
+  "General interest",
+  "Project collaboration",
+  "Interview invite",
+  "Just saying hi",
+];
 
 const contactPage = () => {
+  const [query, setQuery] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+
+  const filtered =
+    query === ""
+      ? options
+      : options.filter((opt) =>
+          opt.toLowerCase().includes(query.toLowerCase())
+        );
+
+  const toggleSelect = (value: string) => {
+    setSelectedOptions((prev) =>
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted");
+  };
+
   return (
-    <main className="scroll-mt-16 max-w-[50rem] grid grid-cols-2 gap-4 p-4">
-      <div className="flex justify-center">
-        {/* <p>This is where you put the form in</p> */}
-        <ExpandableCard />
+    <main className="scroll-mt-16 max-w-[50rem] mt-10">
+      <div className="flex flex-col items-center">
+        <div className="shadow-input mx-auto w-full max-w-md rounded-md bg-none p-4 md:rounded-2xl md:p-8 dark:bg-none border-violet-200 border">
+          <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+            Reach out!
+          </h2>
+          <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
+            You'd never know if you never ask
+          </p>
+
+          <form className="my-8" onSubmit={handleSubmit}>
+            <div className="flex flex-col mb-4 space-y-2 md:flex-row md:space-y-0 md:space-x-2">
+              <LabelInputContainer>
+                <Label htmlFor="firstname">First name</Label>
+                <Input id="firstname" placeholder="Jane" type="text" />
+              </LabelInputContainer>
+              <LabelInputContainer>
+                <Label htmlFor="lastname">Last name</Label>
+                <Input id="lastname" placeholder="Doe" type="text" />
+              </LabelInputContainer>
+            </div>
+            <LabelInputContainer>
+              <Label htmlFor="email">Email Address</Label>
+              <Input
+                id="email"
+                placeholder="your.name@emailprovider.com"
+                type="email"
+              />
+            </LabelInputContainer>
+            <LabelInputContainer>
+              <Label htmlFor="reason">Reason</Label>
+              <Combobox
+                value={selectedOptions}
+                onChange={(value: string[]) => setSelectedOptions(value)}
+                multiple
+                immediate
+              >
+                <div className="relative">
+                  <ComboboxInput
+                    as={Input}
+                    placeholder="Why are you reaching out to me"
+                    onChange={(e) => setQuery(e.target.value)}
+                  />
+                  <ComboboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-zinc-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm">
+                    {filtered.map((item) => (
+                      <ComboboxOption
+                        key={item}
+                        value={item}
+                        className={({ active, selected }) =>
+                          `cursor-pointer select-none px-4 py-2 ${
+                            active
+                              ? "bg-blue-100 dark:bg-zinc-700"
+                              : selected
+                              ? "bg-blue-50 dark:bg-zinc-700"
+                              : ""
+                          }`
+                        }
+                      >
+                        {({ selected }) => (
+                          <span className="flex justify-between">
+                            {item}
+                            {selected && <span>✅</span>}
+                          </span>
+                        )}
+                      </ComboboxOption>
+                    ))}
+                  </ComboboxOptions>
+                </div>
+              </Combobox>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {selectedOptions.map((item) => (
+                  <span
+                    key={item}
+                    className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </LabelInputContainer>
+            <LabelInputContainer>
+              <Label htmlFor="message">Message</Label>
+              <Input
+                id="message"
+                placeholder="I love to read practically anything, so write on..."
+                type="textarea"
+              />
+            </LabelInputContainer>
+
+            <button
+              className="group/btn relative block mt-4 h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+              type="submit"
+            >
+              Send &rarr;
+              <BottomGradient />
+            </button>
+
+            <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+          </form>
+        </div>
       </div>
     </main>
   );
+};
+
+const BottomGradient = () => {
+  return (
+    <>
+      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+    </>
+  );
+};
+
+const LabelInputContainer = ({
+  children,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <div className="flex w-full flex-col space-y-2 mb-4">{children}</div>;
 };
 
 export default contactPage;

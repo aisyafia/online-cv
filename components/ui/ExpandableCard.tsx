@@ -73,7 +73,7 @@ export function ExpandableCard(props: any) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[600px] min-h-[50vh] md:h-fit md:max-h-[90%] flex flex-col bg-[#676394] dark:bg-[#676394] sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[600px] min-h-[50vh] md:h-fit md:max-h-[95%] flex flex-col bg-sky-950 dark:bg-indigo-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -82,7 +82,7 @@ export function ExpandableCard(props: any) {
                   src={active.src}
                   alt={active.title}
                   sizes="70vw"
-                  className="w-full h-auto p-1 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-auto p-4 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
               </motion.div>
 
@@ -111,7 +111,7 @@ export function ExpandableCard(props: any) {
                       layoutId={`button-${active.title}-${id}`}
                       href={active.ctaLink}
                       target="_blank"
-                      className="px-4 py-2 text-xs rounded-full font-semibold bg-sky-950  hover:text-violet-400"
+                      className="px-4 py-2 text-xs rounded-full font-medium text-center bg-stone-950  hover:text-violet-400"
                     >
                       {active.ctaText}
                     </motion.a>
@@ -151,7 +151,7 @@ export function ExpandableCard(props: any) {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => setActive(props)}
-          className="p-4 border border-gray-300 w-full flex flex-col md:flex-row items-center hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 rounded-xl cursor-pointer"
+          className="p-4 border border-violet-200 w-full flex flex-col md:flex-row items-center hover:shadow-md hover:shadow-neutral-400 hover:text-violet-300 rounded-xl cursor-pointer"
         >
           <div className="flex w-full flex-col justify-center items-center gap-2">
             <motion.h3
@@ -176,117 +176,3 @@ export function ExpandableCard(props: any) {
     </>
   );
 }
-
-// const cards = [
-//   {
-//     description: "Lana Del Rey",
-//     title: "Summertime Sadness",
-//     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-//     ctaText: "Play",
-//     ctaLink: "https://ui.aceternity.com/templates",
-//     content: () => {
-//       return (
-//         <p>
-//           Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-//           her melancholic and cinematic music style. Born Elizabeth Woolridge
-//           Grant in New York City, she has captivated audiences worldwide with
-//           her haunting voice and introspective lyrics. <br /> <br /> Her songs
-//           often explore themes of tragic romance, glamour, and melancholia,
-//           drawing inspiration from both contemporary and vintage pop culture.
-//           With a career that has seen numerous critically acclaimed albums, Lana
-//           Del Rey has established herself as a unique and influential figure in
-//           the music industry, earning a dedicated fan base and numerous
-//           accolades.
-//         </p>
-//       );
-//     },
-//   },
-//   {
-//     description: "Babbu Maan",
-//     title: "Mitran Di Chhatri",
-//     src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-//     ctaText: "Play",
-//     ctaLink: "https://ui.aceternity.com/templates",
-//     content: () => {
-//       return (
-//         <p>
-//           Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-//           voice and profound lyrics that resonate deeply with his audience. Born
-//           in the village of Khant Maanpur in Punjab, India, he has become a
-//           cultural icon in the Punjabi music industry. <br /> <br /> His songs
-//           often reflect the struggles and triumphs of everyday life, capturing
-//           the essence of Punjabi culture and traditions. With a career spanning
-//           over two decades, Babu Maan has released numerous hit albums and
-//           singles that have garnered him a massive fan following both in India
-//           and abroad.
-//         </p>
-//       );
-//     },
-//   },
-
-//   {
-//     description: "Metallica",
-//     title: "For Whom The Bell Tolls",
-//     src: "https://assets.aceternity.com/demos/metallica.jpeg",
-//     ctaText: "Play",
-//     ctaLink: "https://ui.aceternity.com/templates",
-//     content: () => {
-//       return (
-//         <p>
-//           Metallica, an iconic American heavy metal band, is renowned for their
-//           powerful sound and intense performances that resonate deeply with
-//           their audience. Formed in Los Angeles, California, they have become a
-//           cultural icon in the heavy metal music industry. <br /> <br /> Their
-//           songs often reflect themes of aggression, social issues, and personal
-//           struggles, capturing the essence of the heavy metal genre. With a
-//           career spanning over four decades, Metallica has released numerous hit
-//           albums and singles that have garnered them a massive fan following
-//           both in the United States and abroad.
-//         </p>
-//       );
-//     },
-//   },
-//   {
-//     description: "Led Zeppelin",
-//     title: "Stairway To Heaven",
-//     src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-//     ctaText: "Play",
-//     ctaLink: "https://ui.aceternity.com/templates",
-//     content: () => {
-//       return (
-//         <p>
-//           Led Zeppelin, a legendary British rock band, is renowned for their
-//           innovative sound and profound impact on the music industry. Formed in
-//           London in 1968, they have become a cultural icon in the rock music
-//           world. <br /> <br /> Their songs often reflect a blend of blues, hard
-//           rock, and folk music, capturing the essence of the 1970s rock era.
-//           With a career spanning over a decade, Led Zeppelin has released
-//           numerous hit albums and singles that have garnered them a massive fan
-//           following both in the United Kingdom and abroad.
-//         </p>
-//       );
-//     },
-//   },
-//   {
-//     description: "Mustafa Zahid",
-//     title: "Toh Phir Aao",
-//     src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
-//     ctaText: "Play",
-//     ctaLink: "https://ui.aceternity.com/templates",
-//     content: () => {
-//       return (
-//         <p>
-//           &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-//           renowned for its intense storyline and powerful performances. Directed
-//           by Mohit Suri, the film has become a significant work in the Indian
-//           film industry. <br /> <br /> The movie explores themes of love,
-//           redemption, and sacrifice, capturing the essence of human emotions and
-//           relationships. With a gripping narrative and memorable music,
-//           &quot;Aawarapan&quot; has garnered a massive fan following both in
-//           India and abroad, solidifying Emraan Hashmi&apos;s status as a
-//           versatile actor.
-//         </p>
-//       );
-//     },
-//   },
-// ];
