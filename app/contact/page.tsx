@@ -12,14 +12,24 @@ import {
 } from "@headlessui/react";
 
 const options = [
-  "General interest",
+  "General inquiry",
+  "Job or interview opportunity",
   "Project collaboration",
-  "Interview invite",
+  "Speaking or event invitation",
   "Just saying hi",
 ];
 
+interface formData {
+  firstname?: string;
+  lastname?: string;
+  email: string;
+  reason: string[];
+  message: string;
+}
+
 const contactPage = () => {
   const [query, setQuery] = useState("");
+  const [data, setData] = useState<Response | formData>();
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
   const filtered =
@@ -35,9 +45,20 @@ const contactPage = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const formDataObject = Object.fromEntries(formData);
+    console.log("Form submitted", formDataObject);
+
+    const data = await fetch("api/form", {
+      method: "POST",
+      body: JSON.stringify(formDataObject),
+    });
+    setData(data);
+    form.reset();
+    setSelectedOptions([]);
   };
 
   return (
@@ -52,10 +73,15 @@ const contactPage = () => {
           </p>
 
           <form className="my-8" onSubmit={handleSubmit}>
-            <div className="flex flex-col mb-4 space-y-2 md:flex-row md:space-y-0 md:space-x-2">
+            <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
               <LabelInputContainer>
                 <Label htmlFor="firstname">First name</Label>
-                <Input id="firstname" placeholder="Jane" type="text" />
+                <Input
+                  id="firstname"
+                  placeholder="Jane"
+                  type="text"
+                  // value={firstname}
+                />
               </LabelInputContainer>
               <LabelInputContainer>
                 <Label htmlFor="lastname">Last name</Label>
@@ -83,6 +109,7 @@ const contactPage = () => {
                     as={Input}
                     placeholder="Why are you reaching out to me"
                     onChange={(e) => setQuery(e.target.value)}
+                    displayValue={(items: string[]) => items.join(", ")}
                   />
                   <ComboboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-zinc-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm">
                     {filtered.map((item) => (
@@ -110,7 +137,7 @@ const contactPage = () => {
                   </ComboboxOptions>
                 </div>
               </Combobox>
-              <div className="mt-2 flex flex-wrap gap-2">
+              {/* <div className="mt-2 flex flex-wrap gap-2">
                 {selectedOptions.map((item) => (
                   <span
                     key={item}
@@ -119,7 +146,8 @@ const contactPage = () => {
                     {item}
                   </span>
                 ))}
-              </div>
+              </div> */}
+              <pre>{JSON.stringify(data, null, 2)}</pre>
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="message">Message</Label>
@@ -135,10 +163,9 @@ const contactPage = () => {
               type="submit"
             >
               Send &rarr;
-              <BottomGradient />
             </button>
 
-            <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+            {/* <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" /> */}
           </form>
         </div>
       </div>

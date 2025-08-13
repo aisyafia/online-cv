@@ -31,10 +31,10 @@ export const links = [
     name: "Education",
     hash: "education",
   },
-  {
-    name: "Skills",
-    hash: "skills",
-  },
+  // {
+  //   name: "Skills",
+  //   hash: "skills",
+  // },
 
   {
     name: "Contact",
