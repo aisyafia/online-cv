@@ -30,7 +30,13 @@ interface formData {
 const contactPage = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState<Response | formData>();
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [formState, setFormState] = useState<formData>({
+    firstname: "",
+    lastname: "",
+    email: "",
+    reason: [],
+    message: "",
+  });
 
   const filtered =
     query === ""
@@ -39,26 +45,33 @@ const contactPage = () => {
           opt.toLowerCase().includes(query.toLowerCase())
         );
 
-  const toggleSelect = (value: string) => {
-    setSelectedOptions((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
-    );
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormState((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const formDataObject = Object.fromEntries(formData);
-    console.log("Form submitted", formDataObject);
+    console.log("Form submitted", formState);
 
-    const data = await fetch("api/form", {
+    const response = await fetch("api/form", {
       method: "POST",
-      body: JSON.stringify(formDataObject),
+      body: JSON.stringify(formState),
     });
-    setData(data);
-    form.reset();
-    setSelectedOptions([]);
+    setData(response);
+
+    setFormState({
+      firstname: "",
+      lastname: "",
+      email: "",
+      reason: [],
+      message: "",
+    });
   };
 
   return (
@@ -80,12 +93,19 @@ const contactPage = () => {
                   id="firstname"
                   placeholder="Jane"
                   type="text"
-                  // value={firstname}
+                  value={formState.firstname}
+                  onChange={handleChange}
                 />
               </LabelInputContainer>
               <LabelInputContainer>
                 <Label htmlFor="lastname">Last name</Label>
-                <Input id="lastname" placeholder="Doe" type="text" />
+                <Input
+                  id="lastname"
+                  placeholder="Doe"
+                  type="text"
+                  value={formState.lastname}
+                  onChange={handleChange}
+                />
               </LabelInputContainer>
             </div>
             <LabelInputContainer>
@@ -94,13 +114,17 @@ const contactPage = () => {
                 id="email"
                 placeholder="your.name@emailprovider.com"
                 type="email"
+                value={formState.email}
+                onChange={handleChange}
               />
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="reason">Reason</Label>
               <Combobox
-                value={selectedOptions}
-                onChange={(value: string[]) => setSelectedOptions(value)}
+                value={formState.reason}
+                onChange={(value: string[]) =>
+                  setFormState((prev) => ({ ...prev, reason: value }))
+                }
                 multiple
                 immediate
               >
@@ -137,17 +161,6 @@ const contactPage = () => {
                   </ComboboxOptions>
                 </div>
               </Combobox>
-              {/* <div className="mt-2 flex flex-wrap gap-2">
-                {selectedOptions.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div> */}
-              <pre>{JSON.stringify(data, null, 2)}</pre>
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="message">Message</Label>
@@ -155,6 +168,8 @@ const contactPage = () => {
                 id="message"
                 placeholder="I love to read practically anything, so write on..."
                 type="textarea"
+                value={formState.message}
+                onChange={handleChange}
               />
             </LabelInputContainer>
 
