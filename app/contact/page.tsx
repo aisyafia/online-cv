@@ -19,7 +19,7 @@ const options = [
   "Just saying hi",
 ];
 
-interface formData {
+export interface formData {
   firstname?: string;
   lastname?: string;
   email: string;
@@ -59,7 +59,7 @@ const contactPage = () => {
     e.preventDefault();
     console.log("Form submitted", formState);
 
-    const response = await fetch("api/form", {
+    const response = await fetch("api/send", {
       method: "POST",
       body: JSON.stringify(formState),
     });
@@ -86,7 +86,7 @@ const contactPage = () => {
           </p>
 
           <form className="my-8" onSubmit={handleSubmit}>
-            <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
+            <div className="flex flex-col space-y-2 mb-4 md:flex-row md:space-y-0 md:mb-0 md:space-x-2">
               <LabelInputContainer>
                 <Label htmlFor="firstname">First name</Label>
                 <Input
@@ -108,6 +108,7 @@ const contactPage = () => {
                 />
               </LabelInputContainer>
             </div>
+
             <LabelInputContainer>
               <Label htmlFor="email">Email Address</Label>
               <Input
