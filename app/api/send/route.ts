@@ -2,16 +2,15 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import EmailTemplate from "@/components/email-template";
-import { formData } from "@/app/contact/page";
 import * as React from "react";
 import { render } from "@react-email/render";
+import { ContactFormData } from "@/lib/formValidation";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const body: formData = await request.json();
-    console.log("body", body.firstname);
+    const body: ContactFormData = await request.json();
 
     const html = await render(React.createElement(EmailTemplate, body));
 

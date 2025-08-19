@@ -1,8 +1,8 @@
 import * as React from "react";
-import type { formData } from "@/app/contact/page";
 import { Html, Body, Text } from "@react-email/components";
+import { ContactFormData } from "@/lib/formValidation";
 
-export default function EmailTemplate(props: formData) {
+export default function EmailTemplate(props: ContactFormData) {
   const { firstname, lastname, email, reason, message } = props;
   return (
     <Html>
