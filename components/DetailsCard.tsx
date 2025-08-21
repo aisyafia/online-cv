@@ -78,7 +78,11 @@ const DetailsCard = (props: any) => {
 
                 {props.details &&
                   props.details.map((detail: string) => {
-                    return <li className="font-light">{detail}</li>;
+                    return (
+                      <li className="font-light" key={detail}>
+                        {detail}
+                      </li>
+                    );
                   })}
               </Description>
             </DialogPanel>

@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Header, Intro } from "@/components";
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
@@ -28,6 +30,18 @@ export default function RootLayout({
         <div className="mt-6 md:mt-24 max-w-full">
           <Header />
           <div className="flex-grow">{children}</div>
+          <ToastContainer
+            position="top-center"
+            autoClose={4000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+            closeButton
+          />
         </div>
       </body>
     </html>

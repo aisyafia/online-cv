@@ -11,6 +11,7 @@ import {
   ComboboxOptions,
 } from "@headlessui/react";
 import { ContactFormData, contactFormSchema } from "@/lib/formValidation";
+import { toast } from "react-toastify";
 
 const options = [
   "General inquiry",
@@ -41,6 +42,7 @@ const ContactForm = () => {
   const [errors, setErrors] = useState<
     Partial<Record<keyof ContactFormData, string>>
   >({});
+  const [loading, setLoading] = useState(false);
 
   const filtered =
     query === ""
@@ -72,16 +74,29 @@ const ContactForm = () => {
         fieldErrors[field] = err.message;
       });
       setErrors(fieldErrors);
+      toast.error("❌ Please fix the errors before submitting");
       return;
     }
 
     setErrors({}); // clear errors if valid
+    setLoading(true);
+
+    const toastId = toast.loading("Sending your message...");
 
     const response = await fetch("api/send", {
       method: "POST",
       body: JSON.stringify(formState),
     });
+
     setData(response);
+
+    toast.update(toastId, {
+      render: "🎉 Your message has been sent!",
+      type: "success",
+      isLoading: false,
+      autoClose: 4000,
+      closeButton: true,
+    });
 
     setFormState({
       firstname: "",
@@ -98,7 +113,7 @@ const ContactForm = () => {
         Reach out!
       </h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-        You'd never know if you never ask
+        You&apos;d never know if you never ask
       </p>
 
       <form className="my-8" onSubmit={handleSubmit}>

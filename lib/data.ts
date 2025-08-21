@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 import moviexplorer from "@/public/moviexplorer.jpg";
 import bs4ss from "@/public/bs4ss.jpg";
 import cocktailogy from "@/public/cocktailogy.jpg";
 import hangmanovie from "@/public/hangmanovie.jpg";
-import atabix from "@/public/atabix-logo-black.svg";
+import atabix from "@/public/atabixNew.webp";
 import nlc from "@/public/nlc-new-orange.svg";
 import coda from "@/public/coda.png";
 import gorillas from "@/public/gorillas2.png";
@@ -17,6 +17,34 @@ import bvd from "@/public/bvd.png";
 import micra from "@/public/micra.png";
 import iob from "@/public/iobuniantwerp.jpeg";
 import ibs from "@/public/ibs.png";
+import { StaticImageData } from "next/image";
+
+type MainInfo = {
+  title: string;
+  description: string;
+  imageUrl: StaticImageData;
+  web?: string;
+  intro?: string;
+  details?: string[];
+};
+
+export type Experience = MainInfo & {
+  company: string;
+  location: string;
+  icon: ReactElement;
+  date: string;
+};
+
+export type Projects = MainInfo & {
+  tags: string[];
+};
+
+export type Education = Omit<MainInfo, "title" | "intro" | "details"> & {
+  degree: string;
+  school: string;
+  location: string;
+  year: string;
+};
 
 export const links = [
   {
@@ -31,18 +59,13 @@ export const links = [
     name: "Education",
     hash: "education",
   },
-  // {
-  //   name: "Skills",
-  //   hash: "skills",
-  // },
-
   {
     name: "Contact",
     hash: "contact",
   },
 ] as const;
 
-export const experiencesData = [
+export const experiencesData: Experience[] = [
   {
     title: "Frontend Developer",
     company: "Atabix",
@@ -224,7 +247,7 @@ export const experiencesData = [
   },
 ] as const;
 
-export const projectsData = [
+export const projectsData: Projects[] = [
   {
     title: "Cocktailogy",
     description:
@@ -284,7 +307,7 @@ export const skillsData = [
   "Python",
 ] as const;
 
-export const educationsData = [
+export const educationsData: Education[] = [
   {
     degree: "MSc in Development Studies",
     school: "University Antwerp",

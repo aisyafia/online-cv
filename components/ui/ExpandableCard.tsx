@@ -62,7 +62,7 @@ export function ExpandableCard(props: any) {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-[22%] right-2 lg:hidden items-center justify-center bg-transparent text-slate-400 hover:text-slate-200 rounded-full h-6 w-6"
+              className="flex absolute top-[20%] right-2 lg:hidden items-center justify-center bg-transparent text-slate-400 hover:text-slate-200 rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <IoMdClose
@@ -73,7 +73,7 @@ export function ExpandableCard(props: any) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[600px] min-h-[50vh] md:h-fit md:max-h-[95%] flex flex-col bg-sky-950 dark:bg-indigo-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[600px] min-h-[50vh] md:h-fit md:max-h-[95%] flex flex-col bg-sky-950 dark:bg-[#161925] sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -86,59 +86,55 @@ export function ExpandableCard(props: any) {
                 />
               </motion.div>
 
-              <div>
-                <div className="flex justify-between items-center p-4">
-                  <div className="">
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className="font-bold"
-                    >
-                      {active.title}
-                    </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                    >
-                      {active.description}
+              <div className="flex justify-between items-center p-4">
+                <div className="">
+                  <motion.h3
+                    layoutId={`title-${active.title}-${id}`}
+                    className="font-bold"
+                  >
+                    {active.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${active.description}-${id}`}
+                  >
+                    {active.description}
+                  </motion.p>
+                  {active.location && (
+                    <motion.p layoutId={`location-${active.location}-${id}`}>
+                      {active.location} - {active.duration}
                     </motion.p>
-                    {active.location && (
-                      <motion.p layoutId={`location-${active.location}-${id}`}>
-                        {active.location} - {active.duration}
-                      </motion.p>
-                    )}
-                  </div>
-                  {active.ctaLink && (
-                    <motion.a
-                      layoutId={`button-${active.title}-${id}`}
-                      href={active.ctaLink}
-                      target="_blank"
-                      className="px-4 py-2 text-xs rounded-full font-medium text-center bg-stone-950  hover:text-violet-400"
-                    >
-                      {active.ctaText}
-                    </motion.a>
                   )}
                 </div>
-                <div className="pt-4 relative px-4">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-xs md:text-sm h-20 md:h-55 pb-8 flex flex-col items-start gap-2 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                {active.ctaLink && (
+                  <motion.a
+                    layoutId={`button-${active.title}-${id}`}
+                    href={active.ctaLink}
+                    target="_blank"
+                    className="px-4 py-2 text-xs rounded-full font-medium text-center bg-stone-950  hover:text-violet-400"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    {active.ctaText}
+                  </motion.a>
+                )}
+              </div>
+              <div className="pt-4 relative px-4">
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-xs md:text-sm h-36 md:h-55 pb-4 flex flex-col items-start gap-2 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:0.5px] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                >
+                  {active.content}
 
-                    {active.subcontent &&
-                      active.subcontent.map((detail: string) => {
-                        return (
-                          <li className="font-light" key={detail}>
-                            {detail}
-                          </li>
-                        );
-                      })}
-                  </motion.div>
-                </div>
+                  {active.subcontent &&
+                    active.subcontent.map((detail: string) => {
+                      return (
+                        <li className="font-light" key={detail}>
+                          {detail}
+                        </li>
+                      );
+                    })}
+                </motion.div>
               </div>
             </motion.div>
           </div>
