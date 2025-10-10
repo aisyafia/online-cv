@@ -5,7 +5,7 @@ import moviexplorer from "@/public/moviexplorer.jpg";
 import bs4ss from "@/public/bs4ss.jpg";
 import cocktailogy from "@/public/cocktailogy.jpg";
 import hangmanovie from "@/public/hangmanovie.jpg";
-import atabix from "@/public/atabixNew.webp";
+import atabix from "@/public/atabix.jpeg";
 import nlc from "@/public/nlc-new-orange.svg";
 import coda from "@/public/coda.png";
 import gorillas from "@/public/gorillas2.png";
@@ -48,16 +48,16 @@ export type Education = Omit<MainInfo, "title" | "intro" | "details"> & {
 
 export const links = [
   {
+    name: "About",
+    hash: "about",
+  },
+  {
     name: "Experience",
-    hash: "/",
+    hash: "experience",
   },
   {
     name: "Projects",
     hash: "projects",
-  },
-  {
-    name: "Education",
-    hash: "education",
   },
   {
     name: "Contact",

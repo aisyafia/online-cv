@@ -12,7 +12,7 @@ const quicksand = Quicksand({ subsets: ["latin"] });
 
 const Intro = () => {
   return (
-    <section className="w-full flex flex-col items-center md:items-start md:w-[18rem] md:h-[97vh] p-4 ">
+    <section className="w-full flex flex-col items-center md:items-start md:w-[18rem] h-[75vh] p-4 ">
       <TextGenerateEffect
         className={`${quicksand.className} text-4xl`}
         words="Lutfia Aisya"
