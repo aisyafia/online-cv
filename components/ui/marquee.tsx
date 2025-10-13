@@ -1,69 +1,50 @@
-// components/ui/marquee.tsx
 "use client";
-
-import * as React from "react";
-import { motion } from "framer-motion";
+import type { HTMLAttributes } from "react";
+import type { MarqueeProps as FastMarqueeProps } from "react-fast-marquee";
+import FastMarquee from "react-fast-marquee";
 import { cn } from "@/lib/utils";
-
-interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
-  pauseOnHover?: boolean;
-  reverse?: boolean;
-}
-
-export function Marquee({
-  className,
-  pauseOnHover = false,
-  reverse = false,
-  children,
+export type MarqueeProps = HTMLAttributes<HTMLDivElement>;
+export const Marquee = ({ className, ...props }: MarqueeProps) => (
+  <div
+    className={cn("relative w-full overflow-hidden", className)}
+    {...props}
+  />
+);
+export type MarqueeContentProps = FastMarqueeProps;
+export const MarqueeContent = ({
+  loop = 0,
+  autoFill = true,
+  pauseOnHover = true,
   ...props
-}: MarqueeProps) {
-  const marqueeRef = React.useRef<HTMLDivElement>(null);
-  const [width, setWidth] = React.useState(0);
-
-  React.useEffect(() => {
-    if (marqueeRef.current) {
-      setWidth(marqueeRef.current.scrollWidth);
-    }
-  }, [children]);
-
-  return (
-    <div
-      ref={marqueeRef}
-      className={cn(
-        "relative flex overflow-hidden [--duration:40s] [--gap:1rem]",
-        className
-      )}
-      {...props}
-    >
-      <motion.div
-        className={cn(
-          "flex shrink-0 items-center gap-[var(--gap)]",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}
-        animate={{
-          x: reverse ? [0, width * -1] : [width * -1, 0],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 40,
-          ease: "linear",
-        }}
-      >
-        {children}
-      </motion.div>
-      <motion.div
-        className="flex shrink-0 items-center gap-[var(--gap)]"
-        animate={{
-          x: reverse ? [0, width * -1] : [width * -1, 0],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 40,
-          ease: "linear",
-        }}
-      >
-        {children}
-      </motion.div>
-    </div>
-  );
-}
+}: MarqueeContentProps) => (
+  <FastMarquee
+    autoFill={autoFill}
+    loop={loop}
+    pauseOnHover={pauseOnHover}
+    {...props}
+  />
+);
+export type MarqueeFadeProps = HTMLAttributes<HTMLDivElement> & {
+  side: "left" | "right";
+};
+export const MarqueeFade = ({
+  className,
+  side,
+  ...props
+}: MarqueeFadeProps) => (
+  <div
+    className={cn(
+      "absolute top-0 bottom-0 z-10 h-full w-24 from-background to-transparent",
+      side === "left" ? "left-0 bg-gradient-to-r" : "right-0 bg-gradient-to-l",
+      className
+    )}
+    {...props}
+  />
+);
+export type MarqueeItemProps = HTMLAttributes<HTMLDivElement>;
+export const MarqueeItem = ({ className, ...props }: MarqueeItemProps) => (
+  <div
+    className={cn("mx-2 flex-shrink-0 object-contain", className)}
+    {...props}
+  />
+);

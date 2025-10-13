@@ -5,7 +5,6 @@ import SkillsMarquee from "@/components/SkillsMarquee";
 export default function Home() {
   return (
     <main>
-      <Experience />
       <SkillsMarquee />
     </main>
   );
