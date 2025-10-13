@@ -18,6 +18,30 @@ import micra from "@/public/micra.png";
 import iob from "@/public/iobuniantwerp.jpeg";
 import ibs from "@/public/ibs.png";
 import { StaticImageData } from "next/image";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiVuedotjs,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiHtml5,
+  SiCss3,
+  SiGit,
+  SiGithub,
+  SiTailwindcss,
+  SiMui,
+  SiStyledcomponents,
+  SiSass,
+  SiBootstrap,
+  SiRedux,
+  SiPostgresql,
+  SiSequelize,
+  SiExpress,
+  SiAxios,
+  SiFigma,
+  SiPython,
+} from "react-icons/si";
 
 type MainInfo = {
   title: string;
@@ -283,28 +307,28 @@ export const projectsData: Projects[] = [
 ] as const;
 
 export const skillsData = [
-  "JavaScript",
-  "TypeScript",
-  "Vue",
-  "React",
-  "Next.js",
-  "Node.js",
-  "HTML",
-  "CSS",
-  "Git",
-  "Github",
-  "Tailwind",
-  "MUI",
-  "Styled Components",
-  "SASS",
-  "Bootstrap",
-  "Redux",
-  "PostgreSQL",
-  "Sequelize",
-  "Express",
-  "Axios",
-  "Figma",
-  "Python",
+  { label: "JavaScript", icon: SiJavascript },
+  { label: "TypeScript", icon: SiTypescript },
+  { label: "Vue", icon: SiVuedotjs },
+  { label: "React", icon: SiReact },
+  { label: "Next.js", icon: SiNextdotjs },
+  { label: "Node.js", icon: SiNodedotjs },
+  { label: "HTML", icon: SiHtml5 },
+  { label: "CSS", icon: SiCss3 },
+  { label: "Git", icon: SiGit },
+  { label: "GitHub", icon: SiGithub },
+  { label: "Tailwind", icon: SiTailwindcss },
+  { label: "MUI", icon: SiMui },
+  { label: "Styled Components", icon: SiStyledcomponents },
+  { label: "SASS", icon: SiSass },
+  { label: "Bootstrap", icon: SiBootstrap },
+  { label: "Redux", icon: SiRedux },
+  { label: "PostgreSQL", icon: SiPostgresql },
+  { label: "Sequelize", icon: SiSequelize },
+  { label: "Express", icon: SiExpress },
+  { label: "Axios", icon: SiAxios },
+  { label: "Figma", icon: SiFigma },
+  { label: "Python", icon: SiPython },
 ] as const;
 
 export const educationsData: Education[] = [
