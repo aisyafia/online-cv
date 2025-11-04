@@ -1,22 +1,3 @@
-// import { skillsData } from "@/lib/data";
-// import { Marquee } from "@/components/ui/marquee";
-
-// export default function SkillsMarquee() {
-//   return (
-//     <Marquee className="py-6" reverse>
-//       {skillsData.map(({ label, icon: Icon }) => (
-//         <div
-//           key={label}
-//           className="flex items-center gap-2 px-4 text-lg font-medium"
-//         >
-//           <Icon className="text-2xl text-muted-foreground" />
-//           <span>{label}</span>
-//         </div>
-//       ))}
-//     </Marquee>
-//   );
-// }
-
 import {
   Marquee,
   MarqueeContent,

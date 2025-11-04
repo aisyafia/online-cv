@@ -6,6 +6,7 @@ import { useOutsideClick } from "@/lib/hooks/use-outside-click";
 import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
 import { CardBackground } from "./CardBackground";
+import { LinkPreview } from "./link-preview";
 
 export function ExpandableCard(props: any) {
   const [active, setActive] = useState<(typeof props)[number] | boolean | null>(
@@ -108,14 +109,12 @@ export function ExpandableCard(props: any) {
                     )}
                   </div>
                   {active.ctaLink && (
-                    <motion.a
-                      layoutId={`button-${active.title}-${id}`}
-                      href={active.ctaLink}
-                      target="_blank"
+                    <LinkPreview
+                      url={active.ctaLink}
                       className="px-4 py-2 text-xs rounded-full font-medium text-center bg-stone-950  hover:text-violet-400"
                     >
                       {active.ctaText}
-                    </motion.a>
+                    </LinkPreview>
                   )}
                 </div>
                 <div className="pt-4 relative px-4">

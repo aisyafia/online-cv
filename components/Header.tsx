@@ -1,16 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { links } from "@/lib/data";
 import React from "react";
 import { usePathname } from "next/navigation";
+import icon from "@/public/LA_icon.png";
 
 const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="relative top-0 ">
-      <div className="text-violet-100 flex items-center justify-center gap-1 text-center ">
+    <header className="flex items-end justify-between">
+      <Link href={"/"} className="flex items-end">
+        <Image
+          src={icon}
+          alt="Lutfia Aisya icon"
+          width={50}
+          height={50}
+          className="w-auto h-auto justify-end"
+        />
+      </Link>
+
+      <div className="text-violet-100 flex items-end justify-end gap-1 text-center ">
         {links.map((link) => {
           const isActive =
             pathname ===

@@ -24,10 +24,6 @@ export default function RootLayout({
         {/* <div className="bg-[#676394] absolute end-0.5 -z-10 left-0.5 h-[20rem] rounded-full blur-[10rem] sm:w-[40rem]"></div>
         <div className="bg-[#676394] absolute end-0.5 -z-10 left-2/3 h-[20rem] rounded-full blur-[10rem] sm:w-[28rem]"></div> */}
         <Header />
-        <div className="flex justify-center">
-          <Intro />
-        </div>
-
         <div className="max-w-full">
           <div>{children}</div>
           <ToastContainer
