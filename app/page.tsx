@@ -5,10 +5,9 @@ import SkillsMarquee from "@/components/SkillsMarquee";
 export default function Home() {
   return (
     <main>
-      <div className="flex justify-center">
-        <Intro />
-      </div>
+      <Intro />
       <SkillsMarquee />
+      <Experience />
     </main>
   );
 }

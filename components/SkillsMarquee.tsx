@@ -14,7 +14,7 @@ export default function SkillsMarquee() {
           {skillsData.map(({ label, icon: Icon }) => (
             <MarqueeItem key={label}>
               <div className="flex items-center gap-2 px-4">
-                <Icon className="text-2xl text-muted-foreground" />
+                <Icon className="text-2xl text-violet-300" />
                 <span>{label}</span>
               </div>
             </MarqueeItem>

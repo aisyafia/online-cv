@@ -6,18 +6,35 @@ import { links } from "@/lib/data";
 import React from "react";
 import { usePathname } from "next/navigation";
 import icon from "@/public/LA_icon.png";
+import { Unbounded } from "next/font/google";
+
+const unbounded = Unbounded({ subsets: ["latin"] });
 
 const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-end justify-between">
-      <Link href={"/"} className="flex items-end">
+    <header className="flex items-center justify-between">
+      <Link href={"/"} className=" items-center space-x-2 hidden md:inline">
         <Image
           src={icon}
           alt="Lutfia Aisya icon"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
+          className="w-auto h-auto justify-end inline"
+        />
+        <span
+          className={`${unbounded.className} ml-4 font-normal text-xl text-violet-300 dark:text-violet-200`}
+        >
+          Lutfia Aisya
+        </span>
+      </Link>
+      <Link href={"/"} className="inline items-center md:hidden space-x-2">
+        <Image
+          src={icon}
+          alt="Lutfia Aisya icon"
+          width={30}
+          height={30}
           className="w-auto h-auto justify-end"
         />
       </Link>

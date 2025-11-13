@@ -57,6 +57,7 @@ export type Experience = MainInfo & {
   location: string;
   icon: ReactElement;
   date: string;
+  year: string;
 };
 
 export type Projects = MainInfo & {
@@ -97,6 +98,7 @@ export const experiencesData: Experience[] = [
     description:
       "A Dutch software provider and knowledge partner for (semi)-governments.",
     icon: React.createElement(CgWorkAlt),
+    year: "2024",
     date: "04/24 - present",
     imageUrl: atabix,
     web: "https://www.atabix.nl/",
@@ -118,6 +120,7 @@ export const experiencesData: Experience[] = [
     description:
       "A venture capital company focusing on healthtech innovations.",
     icon: React.createElement(CgWorkAlt),
+    year: "2023",
     date: "09/23 - 02/24",
     imageUrl: nlc,
     web: "https://www.nlc.health/",
@@ -140,6 +143,7 @@ export const experiencesData: Experience[] = [
     location: "Amsterdam, NL",
     description: "Highest ranked tech academy (bootcamp) in the Netherlands.",
     icon: React.createElement(LuGraduationCap),
+    year: "2022",
     date: "10/22 - 01/23",
     imageUrl: coda,
     intro:
@@ -165,6 +169,7 @@ export const experiencesData: Experience[] = [
     location: "Amsterdam, NL",
     description: "An on-demand grocery delivery service.",
     icon: React.createElement(CgWorkAlt),
+    year: "Early 2022",
     date: "01/22 - 10/22",
     imageUrl: gorillas,
     intro:
@@ -177,6 +182,7 @@ export const experiencesData: Experience[] = [
     location: "Amsterdam, NL",
     description: "An Indonesian restaurant and art gallery.",
     icon: React.createElement(CgWorkAlt),
+    year: "2021",
     date: "01/21 - 12/21",
     imageUrl: bayu,
     web: "https://www.bayufoodandart.com/",
@@ -190,9 +196,10 @@ export const experiencesData: Experience[] = [
     description:
       "A freelance work on policy research papers. The project is titled Strategic Partnership for the Implementation of Paris Agreement (SPIPA).",
     icon: React.createElement(CgWorkAlt),
+    year: "2020",
     date: "08/20 - 09/20",
     imageUrl: giz,
-    web: "https://www.bayufoodandart.com/",
+    web: "https://www.giz.de/en",
     intro:
       "I edited documents related to climate change and energy policy in Indonesia.",
     details: [
@@ -208,6 +215,7 @@ export const experiencesData: Experience[] = [
     description:
       "A financial technology company serving as crowdlending platform, focusing on agriculture industry.",
     icon: React.createElement(CgWorkAlt),
+    year: "2019",
     date: "01/19 - 01/20",
     imageUrl: tanifund,
     intro: "Promoted from Business Process Improvement specialist.",
@@ -228,6 +236,7 @@ export const experiencesData: Experience[] = [
     location: "Jakarta, ID",
     description: "An ecommerce platform for fresh produce.",
     icon: React.createElement(CgWorkAlt),
+    year: "2018",
     date: "01/18 - 01/19",
     imageUrl: tanihub,
     intro:
@@ -248,6 +257,7 @@ export const experiencesData: Experience[] = [
     description:
       "A part-time student job, I administered research on Indonesian companies' ownership data.",
     icon: React.createElement(CgWorkAlt),
+    year: "2017",
     date: "10/16 - 08/17",
     imageUrl: bvd,
     web: "https://www.moodys.com/web/en/us/capabilities/company-reference-data/orbis.html",
@@ -259,6 +269,7 @@ export const experiencesData: Experience[] = [
     description:
       "Microfinance Innovation Center for Research and Alternatives (MICRA) is a consultancy.",
     icon: React.createElement(CgWorkAlt),
+    year: "2015",
     date: "01/14 - 08/15",
     imageUrl: micra,
     web: "https://www.micra-indo.org/",
