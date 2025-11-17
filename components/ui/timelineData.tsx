@@ -11,21 +11,23 @@ export const timelineData = experiencesData.map((exp) => ({
       <h3 className="hidden md:block text-xl md:text-3xl font-bold text-violet-200 dark:text-violet-100 mb-4">
         {exp.title}
       </h3>
-      <div className="flex flex-col md:flex-row md:items-center gap-4">
+      <div className="flex flex-col md:flex-row md:items-center gap-2">
         {exp.imageUrl && (
-          <div className="relative w-40 h-20 flex-shrink-0">
+          <div className="relative w-40 h-20 flex-shrink-1 items-center">
             <Image
               src={exp.imageUrl}
               alt={exp.company}
-              fill
-              className="rounded-xl object-cover"
+              className="rounded-md object-contain"
             />
           </div>
         )}
         <div>
-          <h4 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100">
+          <h4 className="text-xl font-semibold text-violet-300 dark:text-violet-200">
             {exp.company}
           </h4>
+          <h5 className="text-sm font-mono text-violet-300 dark:text-violet-200">
+            {exp.date}
+          </h5>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             {exp.location}
           </p>

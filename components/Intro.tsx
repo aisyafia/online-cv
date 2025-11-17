@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profpic from "@/public/main-img.jpg";
+
 import Link from "next/link";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { BsDownload } from "react-icons/bs";
@@ -13,7 +13,7 @@ const quicksand = Quicksand({ subsets: ["latin"] });
 
 const Intro = () => {
   return (
-    <section className="w-full flex items-between p-4 mt-16 ">
+    <section className="w-full flex justify-center items-between p-4 mt-16 ">
       {/* <div className="flex justify-center md:justify-start items-center mb-4">
         <Image
           src={profpic}
